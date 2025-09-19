@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      body {
+        margin-top: 80px;
+        margin-left: 30px;
+      }
+      .house {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      #remove {
+        background: red;
+        width: 80px;
+        color: aliceblue;
+        border: none;
+        font-size: 30px;
+        border-radius: 5px;
+      }
+      #add {
+        background: green;
+        width: 80px;
+        color: aliceblue;
+        border: none;
+        font-size: 30px;
+        border-radius: 5px;
+      }
+      #reset {
+        background: rgb(35, 49, 35);
+        width: 80px;
+        color: aliceblue;
+        border: none;
+        font-size: 15px;
+        padding: 7px 20px;
+        border-radius: 5px;
+      }
+      #num {
+        font-size: 30px;
+        font-weight: bold;
+        margin: 0 20px;
+      }
+    </style>
+    <div class="house">
+      <button id="remove">-</button>
+      <span id="num">0</span>
+      <button id="add">+</button>
+      <button id="reset">Reset</button>
+    </div>
+    <script>
+      const increament = document.querySelector("#add");
+      const decreament = document.querySelector("#remove");
+      const number = document.querySelector("#num");
+      const resett = document.querySelector("#reset");
+
+      let count = 0;
+      increament.addEventListener("click", function () {
+        count++;
+        number.textContent = count;
+      });
+
+      decreament.addEventListener("click", function () {
+        if (count > 0) {
+          count--;
+          number.textContent = count;
+        }
+      });
+      resett.addEventListener("click", function () {
+        count = 0;
+        number.textContent = count;
+      });
+    </script>
+  </body>
+</html>
